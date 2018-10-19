@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="pers.rmb122.chat.ConfigController" prefHeight="199.0"
+      prefWidth="321.0" xmlns="http://javafx.com/javafx/8.0.172-ea">
+    <children>
+        <AnchorPane maxHeight="240.0" maxWidth="315.0" prefHeight="240.0" prefWidth="315.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="text_ip" layoutX="121.0" layoutY="38.0" prefHeight="29.0" prefWidth="149.0">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </TextField>
+                <TextField fx:id="text_port" layoutX="121.0" layoutY="72.0" prefHeight="29.0" prefWidth="149.0">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </TextField>
+                <Label layoutX="31.0" layoutY="43.0" text="Remote Ip">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="50.0" layoutY="77.0" text="Port">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="btn_save" layoutX="109.0" layoutY="147.0" mnemonicParsing="false"
+                        onAction="#onButtonClick" text="Save config">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </Button>
+                <TextField fx:id="text_username" layoutX="121.0" layoutY="105.0" prefHeight="29.0" prefWidth="149.0">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </TextField>
+                <Label layoutX="35.0" layoutY="110.0" text="Username">
+                    <font>
+                        <Font name="Sarasa Term SC Regular" size="15.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="510.0" prefWidth="660.0"
+      xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="pers.rmb122.chat.MainController">
+    <children>
+        <TextArea fx:id="text_input" layoutX="187.0" layoutY="385.0" prefHeight="98.0" prefWidth="472.0"/>
+        <ListView fx:id="list_users" prefHeight="510.0" prefWidth="187.0"/>
+        <ListView fx:id="list_history" layoutX="187.0" prefHeight="386.0" prefWidth="472.0"/>
+        <Button fx:id="btn_send" layoutX="591.0" layoutY="483.0" mnemonicParsing="false" onAction="#send"
+                prefHeight="26.0" prefWidth="68.0" text="Send"/>
+        <Button fx:id="btn_refresh" layoutX="187.0" layoutY="483.0" mnemonicParsing="false" onAction="#refresh"
+                text="Refresh"/>
+        <Button fx:id="btn_exit" layoutX="255.0" layoutY="483.0" mnemonicParsing="false" onAction="#exit"
+                prefHeight="26.0" prefWidth="68.0" text="Exit"/>
+    </children>
+</Pane>
