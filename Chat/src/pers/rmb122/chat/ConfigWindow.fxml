@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="pers.rmb122.chat.ConfigController" prefHeight="199.0"
-      prefWidth="321.0" xmlns="http://javafx.com/javafx/8.0.172-ea">
+      prefWidth="321.0" xmlns="http://javafx.com/javafx/8.0.172-ea" stylesheets="@bootstrap3.css">
     <children>
         <AnchorPane maxHeight="240.0" maxWidth="315.0" prefHeight="240.0" prefWidth="315.0" VBox.vgrow="ALWAYS">
             <children>

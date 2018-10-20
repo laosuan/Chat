@@ -8,17 +8,19 @@ import pers.rmb122.chat.utils.Net;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 public class Client extends Thread {
+    public Listener listener;
     private int remotePort;
     private String remoteIp;
     private String username;
     private Socket sck;
     private ArrayList<Parent> parentPtr;
     private HashMap<String, ArrayList<String>> chatHistory;
-    public Listener listener;
-    private boolean DEBUG = false;
+    private boolean DEBUG = true;
 
     public Client(Config config, ArrayList<Parent> parentPtr, HashMap<String, ArrayList<String>> chatHistory) {
         if (DEBUG) {
@@ -68,7 +70,7 @@ public class Client extends Thread {
         try {
             register();
             Emitter emitter = new Emitter(sck);
-            this.listener = new Listener(sck,username, parentPtr, chatHistory);
+            this.listener = new Listener(sck, username, parentPtr, chatHistory);
             emitter.setDaemon(true);
             this.listener.setDaemon(true);
             emitter.start(); // 开始发送心跳

@@ -26,7 +26,6 @@ public class Manager extends Thread {
         try {
             handle();
         } catch (Exception e) {
-            e.printStackTrace();
             if (username != "" && users.containsKey(username)) { //避免重复删除
                 users.remove(username); // 删除此用户
                 System.out.println(">>> " + username + " has been offline.");

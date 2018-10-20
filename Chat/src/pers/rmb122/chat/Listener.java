@@ -63,7 +63,7 @@ public class Listener extends Thread { // 监听 Socket
     public void refreshHistory() {
         ListView<String> listView = (ListView) parentPtr.get(0).lookup("#list_history");
         if (chatHistory.get(currSelected) != null) {
-            Platform.runLater(()->{ // runLater 保持线程同步
+            Platform.runLater(() -> { // runLater 保持线程同步
                 listView.setItems(null);
                 listView.setItems(FXCollections.observableList(chatHistory.get(currSelected)));
                 listView.refresh();
@@ -106,7 +106,7 @@ public class Listener extends Thread { // 监听 Socket
         Gson gson = new Gson();
         List<String> userList = gson.fromJson(mess.payload, new TypeToken<List<String>>() {
         }.getType()); // 将 json 反序列化到 List
-        Platform.runLater(()->{
+        Platform.runLater(() -> {
             ListView<String> listView = (ListView) parentPtr.get(0).lookup("#list_users");
             userList.add(0, "<Public Chat>");
             listView.setItems(FXCollections.observableList(userList));

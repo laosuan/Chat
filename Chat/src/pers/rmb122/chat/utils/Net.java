@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 
 public class Net {
     public static Message recv(Socket sck) throws IOException {
@@ -34,7 +35,9 @@ public class Net {
         OutputStream writer = sck.getOutputStream();
         int length = json.getBytes().length;
         byte[] byteLength = Transfer.int2bytes(length);
-        writer.write(byteLength); // 写入消息长度
-        writer.write(json.getBytes()); // 写入消息
+        byte[] payload = new byte[byteLength.length + json.getBytes().length];
+        System.arraycopy(byteLength, 0, payload, 0, byteLength.length); // 这样写浪费资源但是保证多线程时不会混乱
+        System.arraycopy(json.getBytes(), 0, payload, byteLength.length, json.getBytes().length);
+        writer.write(payload); // 写入消息
     }
 }
